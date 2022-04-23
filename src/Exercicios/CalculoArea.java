@@ -20,14 +20,16 @@ public class CalculoArea {
             case 1:
                 System.out.println("informe o lado do quadrado: ");
                 double lado = scan.nextDouble();
-                calculoArea(lado);
+                double quadrado = calculoArea(lado);
+                System.out.println("Área do quadrado: " + quadrado);
                 break;
             case 2:
                 System.out.println("informe o lado do retângulo: ");
                 double ladoR = scan.nextDouble();
                 System.out.println("informe a altura do retângulo: ");
                 double alturaR = scan.nextDouble();
-                calculoArea(ladoR, alturaR);
+                double retangulo = calculoArea(ladoR, alturaR);
+                System.out.println("Área do retângulo: " + retangulo);
                 break;
             case 3:
                 System.out.println("informe o lado superior do trapézio: ");
@@ -36,7 +38,8 @@ public class CalculoArea {
                 double ladoI = scan.nextDouble();
                 System.out.println("informe a altura do trapézio: ");
                 double alturaT = scan.nextDouble();
-                calculoArea(ladoS, ladoI, alturaT);
+                double trapezio = calculoArea(ladoS, ladoI, alturaT);
+                System.out.println("Área do trapézio: " + trapezio);
                 break;
             case 4:
                 System.out.println("Encerrando...");
@@ -47,19 +50,19 @@ public class CalculoArea {
 
 
 
-    public static void calculoArea(double lado){
+    public static double calculoArea(double lado){
         double area = Math.pow(lado,2);
-        System.out.println("A área do quadrado é " + area);
+        return area;
     }
 
-    public static void calculoArea(double lado, double altura){
+    public static double calculoArea(double lado, double altura){
         double area = lado * altura;
-        System.out.println("A área do retângulo é " + area);
+        return area;
     }
 
-    public static void calculoArea(double ladoA, double ladoB, double altura){
+    public static double calculoArea(double ladoA, double ladoB, double altura){
         double area = 0.5* altura * (ladoA + ladoB);
-        System.out.println("A área do trapézio é " + area);
+        return area;
     }
 
 }
